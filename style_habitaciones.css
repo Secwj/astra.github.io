@@ -309,7 +309,7 @@ div, ul, nav, header, footer, a, li, label, input, body,img,i {
 .container-detalle-habitaciones {
     display: grid;
     margin: 50px auto;
-    grid-template-columns: repeat(auto-fit, minmax(400px,auto));
+    grid-template-columns: repeat(auto-fit, minmax(350px,auto));
     max-width: 1000px;
     justify-content: center;
     gap: 30px;
@@ -324,6 +324,7 @@ div, ul, nav, header, footer, a, li, label, input, body,img,i {
     width: 100%;
     background-color: #2a3942;
     color: white;
+    
 }
 
 .habitacion-info > img {
