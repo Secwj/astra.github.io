@@ -1,0 +1,616 @@
+* {
+    box-sizing: border-box;
+    text-wrap:balance;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+body,html {
+    margin: 0;
+    padding: 0;
+    /*Declarando Variables*/
+    --blue-light-color: #067b88;
+    --dark-color:#000000;
+    --white-color:#fff;
+    --text-color:#333;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-x: hidden;
+    
+}
+
+div, ul, nav, header, footer, a, li, label, input, body,img,i {
+    margin: 0;
+    padding: 0;
+}
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background: url(img/contact-landing.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 50vh;
+    color: var(--white-color);
+    container-type: inline-size;
+    container-name: header;
+    overflow-x: hidden;
+    position: relative;
+}
+/*Fondo oscuro semi-transparente*/
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: calc(100% + 102px);
+    background-color: rgba(0, 0, 0, 0.5); /* Negro semi-transparente */
+    z-index: 2; /* Asegura que esté sobre la imagen pero debajo del contenido */
+    pointer-events: none;
+}
+.header > * {
+    position: relative;
+    z-index: 2;
+}
+/* Escondiendo el boton de checkbox */
+#open-menu {
+    display: none;
+}
+
+
+.header_open-nav-button {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 700;
+    right: 10px;
+    cursor: pointer;
+    padding: 20px 10px;
+    text-shadow: 1px 1px 10px #000000;
+    z-index: 3;
+}
+
+.container-name-hotel {
+    background-color: transparent; 
+    /* #1b2838 */
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.281);
+}
+
+.container-name-hotel > img {
+    width: 100%;
+    max-width: 80px;
+    filter: drop-shadow(1px 1px 10px #ffffff);
+
+}
+
+.nav {
+    background-color: transparent;
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 50vh;
+    position: absolute;
+    top: 102px;
+    right: -200%;
+    transition: right 0.2s ease-in-out;
+    text-shadow: 1px 1px 1px #000000;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.233);
+    
+}
+.header_nav_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+    z-index: 10;
+}
+
+.header_nav_container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+    justify-content: space-around;
+    align-items: start;
+    height: 50vh;
+    width: 90%;
+    font-size: 1.3rem;
+    overflow-x: hidden;
+    z-index: 10;
+}
+
+.header_nav_item {
+    margin: 0px 20px;
+}
+
+.header_nav_item > a {
+    color: inherit;
+    text-decoration: none;
+}
+.header_nav_item >a:hover {
+    color: #ffffffdc;
+}
+
+.header_nav_img_item {
+    width: 100%;
+    max-width: 10px;
+    display: none;
+    filter: brightness(0) invert(1);
+}
+
+#open-menu:checked ~ .nav {
+    right: 0;
+}
+
+/* Diseñar el texto de habitaciones que sale en el header */
+.tittle {
+    display: flex;
+    justify-content: end;
+    align-items: end;
+    position: absolute;
+    font-size: clamp(1.5rem,1.8rem,3rem);
+    width: 100vw;
+    height: 50vh;
+    right: 10px;
+    animation: aparecer-texto .6s both linear;
+    pointer-events: none;
+}
+
+.section-location {
+    background-color: #DAE7E1;
+    padding: 20px 0px;
+
+}
+.container-location {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    max-width: 1300px;
+    margin: 0 auto;
+
+}
+
+.info-location {
+    max-width: 600px;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.info-location > h1 {
+    color: #067b88;
+    text-shadow: 0px 0px 2px black;
+}
+.info-location > p {
+    margin: 10px 0px;
+    letter-spacing: 1.5px;
+}
+
+.info-location > img {
+    width: 100%;
+    max-width: 600px;
+}
+.button-location {
+    background-color: #12575f;
+    border: none;
+    padding: 20px 60px;
+    margin: 10px 0px;
+    transition: background-color 0.2s ease-in-out;
+    color: white;
+    font-weight: bold;
+}
+
+.button-location:hover {
+    background-color: rgb(172, 100, 53);
+    cursor: pointer;
+    
+}
+
+
+/* ---------- CONTACT SECTION ----------------- */
+.container-contactanos {
+    display: grid;
+    max-width: 1150px;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    margin: 30px auto;
+}
+
+.container-contact-information {
+    padding: 10px;
+    margin: 10px;
+}
+
+.container-contact-information > h2 {
+    font-size: 2rem;
+    margin: 10px 0px;
+    letter-spacing: 1.3px;
+}
+
+
+.container-contact-information > p {
+    margin: 20px 0px;
+}
+
+.container-contact-information > a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+.container-contact-information > span {
+    display: block;
+    margin: 5px 0px;
+    font-weight: bold;
+}
+.container-contact-information:nth-child(2){
+    display: flex;
+    flex-direction: column;
+
+}
+
+
+.container-contact-information > input,textarea {
+    border: 1px solid rgba(172, 100, 53, 1);
+}
+
+.container-contact-information > label {
+    font-size: 12px;
+    margin: 2px 0px;
+}
+.container-contact-information > input {
+    padding: 10px;
+    margin: 10px 0px;
+}
+
+.container-contact-information:nth-child(2) > textarea {
+    height: 50px;
+    margin-bottom: 10px;
+
+}
+
+.button-contact {
+    background-color: #12575f;
+    border: none;
+    padding: 20px 60px;
+    margin: 10px 0px;
+    transition: background-color 0.2s ease-in-out;
+    color: white;
+    font-weight: bold;
+    width: 50%;
+}
+
+.button-contact:hover {
+    background-color: rgb(172, 100, 53);
+    cursor: pointer;
+    
+}
+
+/* ---------------------- SUBSCRIPCIONES SECTION  */
+.section-subscripciones {
+    background-color: rgba(100, 144, 136, 1);
+    height: 80px;
+}
+
+.container-subscripciones {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 1rem;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.container-subscripciones > button {
+    margin-left: 20px;
+    border: 3px solid black;
+    background-color: transparent;
+    padding: 9px 40px;
+    font-weight: bold;
+    font-size: 16px;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.container-subscripciones > button:hover {
+    background-color: white;
+    cursor: pointer;
+}
+
+
+/* ------------------- SECCION FOOTER ---------- */
+
+.container-footer {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-footer-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    max-width: 1500px;
+    width: 100%;
+}
+
+.info-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin: 15px 0px;
+}
+
+
+.info-sections > h1 {
+    margin: 10px 0px;
+}
+
+.info-sections > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 5px;
+}
+
+.info-sections > span > i {
+    margin: 0px 10px;
+}
+
+.info-sections > span > a {
+    text-decoration: none;
+    color: white;
+}
+
+.info-sections > img {
+    filter: brightness(0) invert(1);
+    text-align: center;
+    max-width: 150px;
+    
+}
+
+.info-sections:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.info-sections:nth-child(3) > * {
+    width: fit-content;
+}
+
+.info-sections:nth-child(3) > input[type="email"] {
+    padding: 10px;
+    margin: 20px;
+}
+.info-sections:nth-child(3) > button[type="submit"] {
+    padding: 5px 15px;
+    border: 3px solid #fff;
+    margin: 5px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+.info-sections:nth-child(3) > button[type="submit"]:hover {
+    background-color: #333;
+}
+
+
+
+@media screen and (min-width:600px) {
+    /* Parte del footer */
+    .info-sections:nth-child(3) {
+        grid-column: span 2;
+    }
+
+    .container-location {
+        direction: rtl;
+        align-items: center;
+    }
+    /* ALineamos a la izquierda por el cambio de direction */
+    .info-location{
+        text-align: left;
+        max-width: 450px;
+    }
+
+    /* --------   SUBSCRIPCION SECTION ----------- */
+
+    .container-subscripciones {
+        font-size: 1.2rem;
+    }
+    
+    .container-subscripciones > button {
+        margin-left: 20px;
+        padding: 9px 40px;
+        font-size: 16px;
+    }
+    
+    
+} 
+
+
+@container header (min-width:800px) {
+    /* Eliminamos el boton de movil */
+    .header_open-nav-button {
+        display: none;
+    }
+    
+
+    .header::before {
+        height: 100%;
+
+    }
+
+    .container-name-hotel {
+        background-color: transparent;
+        padding: 0;
+        display: none;
+    }
+    
+    .container-name-hotel > img {
+        display: none;
+    
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+
+    .header_nav_container {
+        display: flex;
+        flex-direction: row;
+        padding: 10px 0px;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        font-size: clamp(1em,1.3em,1.5em);
+    }
+
+    .header_nav_img_item {
+        width: 100%;
+        max-width: 110px;
+        display: block;
+        filter: drop-shadow(1px 1px 3px #0000);
+        filter: brightness(0) invert(1);
+    }
+
+    .tittle {
+        justify-content: center;
+        align-items: center;
+    }
+
+
+
+}
+
+@media  screen and (min-width:800px) {
+
+    .container-location {
+        grid-template-columns:repeat(auto-fill,minmax(400px,1fr)) ;
+        align-items: center;
+    }
+    .info-location {
+        max-width: 550px;
+    }
+    .info-location > img {
+        max-width: 550px;
+        max-height: 550px;
+    }
+    .info-location > h1 {
+        font-size: 3rem;
+    }
+
+    .container-subscripciones {
+        font-size: 2.1rem;
+    }
+    
+    .container-subscripciones > button {
+        margin-left: 20px;
+        padding: 15px 50px;
+        font-size: 16px;
+    }
+    
+
+
+    /* --------- CONTACT INFORMATION  */
+    .container-contactanos {
+        grid-template-columns: repeat(auto-fill,minmax(450px,1fr));
+    }
+
+    .container-footer-info {
+        grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+
+    }
+
+
+    .info-sections:nth-child(1) {
+        grid-column: span 2;
+        
+    }
+
+    .info-sections:nth-child(2) {
+        grid-column: span 2;
+    }
+
+
+    
+}
+
+
+@media  screen and (min-width:1200px) {
+    .header_nav_list {
+        width: 90%;
+        margin: 0 auto;
+    }
+
+    .container-location {
+        grid-template-columns:repeat(auto-fill,minmax(600px,1fr)) ;
+        align-items: center;
+        gap: 0px;
+    }
+    .info-location {
+        max-width: 600px;
+        padding: 5px;
+    }
+    .info-location:nth-child(1){
+        max-width: 700px;
+    }
+    .info-location > h1 {
+        font-size: 3rem;
+    }
+
+
+    /*Modificando footer*/
+
+    .info-sections:nth-child(1) {
+        align-items: start;
+        justify-content: start;
+        padding-left: 20px;
+    }
+
+    .info-sections:nth-child(1) {
+        grid-column: span 1;
+    }
+
+    .info-sections:nth-child(2) {
+        grid-column: span 1;
+    }
+
+    .info-sections:nth-child(3) {
+        grid-column: span 1;
+    }
+
+}
+
+
+@keyframes aparecer-texto {
+    0% {
+        transform: translate(0, -100%);
+        opacity: 0;
+    }
+
+    50% {
+        opacity: .5;
+    }
+
+    80% {
+        opacity: .8;
+    }
+    100% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+}

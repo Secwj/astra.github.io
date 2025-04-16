@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hotel Astro | 5 estrellas</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/727d4fd8a6.js" crossorigin="anonymous"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Winky+Sans:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header class="header">
+            <input type="checkbox" id="open-menu">
+            <label for="open-menu" class="header_open-nav-button">
+                <i class="fa-solid fa-bars"></i>
+            </label>
+            <div class="container-name-hotel">
+                <img src="img/logo-sin.letras.png">
+            </div>
+            
+            <nav class="nav">
+                    <ul class="header_nav_list">
+                        <div class="header_nav_container">
+                            <li class="header_nav_item"><a href="index.html">El Hotel</a></li>
+                            <li class="header_nav_item"><a href="habitaciones.html">Habitaciones</a></li>
+                            <li class="header_nav_item"><a href="servicios.html">Servicios</a></li>
+                            <li class="header_nav_item"><img src="img/logo.png" class="header_nav_img_item"></li>
+                            <li class="header_nav_item"><a href="promociones.html">Promociones</a></li>
+                            <li class="header_nav_item"><a href="galeria.html">Galeria</a></li>
+                            <li class="header_nav_item"><a href="ubicacion_contacto.html">Ubicacion y Contacto</a></li>
+                        </div>
+                        
+                    </ul>
+            </nav>
+            
+        
+    </header>
+    <main>
+        <section class="container-tarifas">
+            <div class="container-info-tarifas">
+                <div class="container-tarifas-items">
+                    <span class="tarifa-item">
+                        <p>Fecha de Llegada</p>
+                        <input type="date" name="fecha">
+
+                    </span>
+                    <span class="tarifa-item">
+                        <p>Fecha de Salida</p>
+                        <input type="date" name="fecha">
+
+                    </span>
+                    <span class="tarifa-item">
+                        <p>Codigo Promocional</p>
+                        <textarea class="container-code"></textarea>
+                    </span>
+                    <span class=" tarifa-item  tarifa-item-habitacion">
+                        <label for="habitaciones">Tipo de Habitación</label>
+                        <select id="habitaciones" name="habitaciones">
+                            <option value="Doble">Doble <i class="fa fa-users"></i></option>
+                            <option value="Doble">Individual <i class="fa-solid fa-user"></i></option>
+                            <option value="Habitacio">Otras opciones</option>
+
+                        </select>
+                        
+
+                    </span>
+                    <span class="tarifa-item-button">
+                        <button type="submit" class="button-tarifas">VER TARIFAS <i class="fa-solid fa-magnifying-glass"></i></button>
+                    </span>
+                </div>
+            </div>
+        </section>
+
+        <article class="container-habitacion-doble">
+
+            <div class="container-habitacion-info">
+                <img src="img/cama-king.jpg"></img>
+                <div class="info-habitacion-doble">
+                    <h3>Habitacíón Doble</h3>
+                    <p>Habitación doble. Esta habitación con una cama king cuenta con aire acondicionado, ventilador, calefacción y baño completo. Las toallas y la ropa de cama están incluidas.</p>
+                    <div class="container-beneficios">
+                        <div class="info-beneficios">
+                            <i class="fa-solid fa-maximize"></i>
+                            <span>Tamaño</span>
+                            <p>3040 m2</p>
+                        </div>
+
+                        <div class="info-beneficios">
+                            <i class="fa-solid fa-mug-hot"></i>
+                            <span>Desayuno Incluido</span>
+                            <p>Si</p>
+                        </div>
+
+                        <div class="info-beneficios">
+                            <i class="fa-solid fa-square-parking"></i>
+                            <span>Estacionamiento</span>
+                            <p>Si</p>
+                        </div>
+
+                        <div class="info-beneficios">
+                            <i class="fa-solid fa-joint"></i>
+                            <span>Fumadores</span>
+                            <p>No</p>
+                        </div>
+
+                        <div class="info-beneficios">
+                            <i class="fa-solid fa-tv"></i>
+                            <span>TV</span>
+                            <p>Si</p>
+                        </div>
+
+                        <div class="info-beneficios">
+                            <i class="fa-solid fa-wifi"></i>
+                            <span>Wi-Fi</span>
+                            <p>Si/No</p>
+                        </div>
+
+                        <div class="info-beneficios">
+                            <i class="fa-solid fa-wind"></i>
+                            <span>Aire Acondicionado</span>
+                            <p>Si</p>
+                        </div>
+
+                        <div class="info-beneficios">
+                            <i class="fa-solid fa-temperature-full"></i>
+                            <span>Calefacción</span>
+                            <p>Si</p>
+                        </div>
+
+                    </div>
+
+                    <button class="button-tarfias-habitacion-doble" type="sumbit"> <i class="fa fa-bell-concierge"></i>
+                        Ver Tarifas</button>
+                </div>
+                
+            </div>
+
+        </article>
+
+
+        <article class="container-testimonios">
+            <h4>Testimonios</h4>
+            <div class="container-testimonios-info">
+                <div class="info-testimonios">
+                    <div class="container-img-testimonios">
+                        <img src="img/user-hombre.png">
+                        <h6>User 1</h6>
+                    </div>
+                    <div class="container-texto-testimonios">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illo obcaecati velit omnis explicabo sunt cum ut aut atque placeat distinctio temporibus quasi porro dolore eos, inventore, sit, dicta maxime?</p>
+                    </div>
+
+                </div>
+
+                <div class="info-testimonios">
+                    <div class="container-img-testimonios">
+                        <img src="img/user-mujer.png">
+                        <h6>User 2</h6>
+                    </div>
+                    <div class="container-texto-testimonios">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illo obcaecati velit omnis explicabo sunt cum ut aut atque placeat distinctio temporibus quasi porro dolore eos, inventore, sit, dicta maxime?</p>
+                    </div>
+
+                </div>
+
+
+
+                <div class="info-testimonios">
+                    <div class="container-img-testimonios">
+                        <img src="img/user-hombre.png">
+                        <h6>User 3</h6>
+                    </div>
+                    <div class="container-texto-testimonios">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illo obcaecati velit omnis explicabo sunt cum ut aut atque placeat distinctio temporibus quasi porro dolore eos, inventore, sit, dicta maxime?</p>
+                    </div>
+
+                </div>
+
+                <div class="info-testimonios">
+                    <div class="container-img-testimonios">
+                        <img src="img/user-mujer.png">
+                        <h6>User 4</h6>
+                    </div>
+                    <div class="container-texto-testimonios">
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque illo obcaecati velit omnis explicabo sunt cum ut aut atque placeat distinctio temporibus quasi porro dolore eos, inventore, sit, dicta maxime?</p>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </article>
+
+    </main>
+    <footer class="container-footer">
+        <div class="container-footer-info">
+            <div class="info-sections">
+                <h1>Astra</h1>
+                <span><i class="fa-solid fa-phone-volume"></i> <p> +51 972 233 123 </p></span>
+                <span><i class="fa-solid fa-phone-volume"></i> <p> +51 972 233 123 </p></span>
+                <span><i class="fa-solid fa-phone-volume"></i> <p> +51 972 233 123 </p></span>
+                <span><i class="fa-solid fa-location-dot"></i><p>Av Tomas Valle 145, Lima, Perú</p></span>
+                <span><i class="fa-solid fa-envelope"></i><a href="mailto:ejemplo@correo.com">Jesus@astra.com</a></span>
+            </div>
+
+            <div class="info-sections">
+                <img src="img/logo.png">
+            </div>
+
+            <div class="info-sections">
+                <label>SUSCRÍBETE A NUESTRO NEWSLETTER</label>
+                <input type="email" placeholder="Ingresa tu email">
+                <button type="submit">Suscribirse</button>
+            </div>
+
+
+            
+        </div>
+
+    </footer>
+</body>
+</html>

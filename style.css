@@ -1,0 +1,713 @@
+* {
+    box-sizing: border-box;
+    text-wrap:balance;
+    scroll-behavior: smooth;
+    margin: 0;
+}
+body,html {
+    margin: 0;
+    padding: 0;
+    /*Declarando Variables*/
+    --blue-light-color: #067b88;
+    --dark-color:#000000;
+    --white-color:#fff;
+    --text-color:#333;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    overflow-x: hidden;
+    
+}
+
+div, ul, nav, header, footer, a, li, label, input, body,img,i {
+    margin: 0;
+    padding: 0;
+}
+
+/*-------------------- SECCION DE ENCABEZADO ---------------------- */
+
+.header {
+    display: flex;
+    flex-direction: column;
+    background: url(img/hotel.jpg) no-repeat;
+    background-position: center;
+    background-size: cover;
+    min-height: 100vh;
+    color: var(--white-color);
+    container-type: inline-size;
+    container-name: header;
+    overflow-x: hidden;
+    position: relative;
+}
+/*Fondo oscuro semi-transparente*/
+.header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Negro semi-transparente */
+    z-index: 1; /* Asegura que esté sobre la imagen pero debajo del contenido */
+}
+.header > * {
+    position: relative;
+    z-index: 2;
+}
+/* Escondiendo el boton de checkbox */
+#open-menu {
+    display: none;
+}
+
+.header_open-nav-button {
+    position: absolute;
+    font-size: 3rem;
+    font-weight: 700;
+    right: 10px;
+    cursor: pointer;
+    padding: 20px 10px;
+    text-shadow: 1px 1px 10px #000000;
+    z-index: 3;
+}
+
+.container-name-hotel {
+    background-color: transparent; 
+    /* #1b2838 */
+    padding: 10px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.281);
+}
+
+.container-name-hotel > img {
+    width: 100%;
+    max-width: 80px;
+    filter: drop-shadow(1px 1px 10px #ffffff);
+
+}
+
+.nav {
+    background-color: transparent;
+    color: var(--white-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100vw;
+    height: 40vh;
+    position: absolute;
+    top: 102px;
+    right: -200%;
+    transition: right 0.2s ease-in-out;
+    text-shadow: 1px 1px 1px #000000;
+    border-bottom: 2px solid rgba(255, 255, 255, 0.233);
+    
+}
+.header_nav_list {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: 100vw;
+}
+
+.header_nav_container {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 0px;
+    justify-content: space-around;
+    align-items: start;
+    height: 40vh;
+    width: 98%;
+    margin: 0 auto;
+    font-size: 1.3rem;
+    overflow-x: hidden;
+}
+
+.header_nav_item {
+    margin: 0px 20px;
+}
+
+.header_nav_item > a {
+    color: inherit;
+    text-decoration: none;
+}
+.header_nav_item >a:hover {
+    color: #ffffffdc;
+}
+
+.header_nav_img_item {
+    width: 100%;
+    max-width: 10px;
+    display: none;
+    filter: brightness(0) invert(1);
+}
+
+#open-menu:checked ~ .nav {
+    right: 0;
+}
+
+/*---------- VER TARFIAS SECTION ---------------- */
+
+.container-tarifas {
+    max-width: 1900px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    
+}
+
+.container-info-tarifas {
+    margin: 20px 10px;
+    max-width: 1300px;
+    width: 100%;
+    
+
+}
+
+.container-tarifas-items {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px,1fr));
+    place-content: center;
+    width: 100%;
+    margin: 0 auto; /* Centra el contenedor horizontalmente */
+    justify-items: center; /* Centra las celdas horizontalmente */
+    align-items: center;
+    min-width: 250px;
+    gap: 10px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 15px #c2bfbf;
+
+}
+
+.tarifa-item {
+    display: flex;
+    padding: 10px;
+    width: 80%;
+    flex-direction: column;
+    padding: 5px;
+    height: 80px;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 17px;
+    margin: 50px 0px;
+
+
+}
+
+.container-code {
+    width: 100%; /* Establece el ancho */
+    height: 50px; 
+    border: 1px solid rgb(212, 210, 210);
+    resize: none;
+    padding: 2px 5px;
+    font-size: 19px;
+    font-weight: bold;
+
+}
+
+.tarifa-item-habitacion {
+    border-right: none;
+}
+
+.tarifa-item-button {
+    display: flex;
+    width: 100%;
+}
+
+.button-tarifas {
+    padding: 20px;
+    background-color: white;
+    color: var(--dark-color);
+    border: none;
+    font-weight: 700;
+    font-size: 1.1em;
+    cursor: pointer;
+    width: 90%;
+    margin: 2px auto;
+    transition: background-color,color 0.2s ease-in-out;
+    border: 1px solid #022024;
+}
+.button-tarifas:hover {
+    background-color: #022024;
+    color: white;
+}
+
+input[type="date"] {
+    padding: 10px;
+    font-size: 19px;
+    border: 1px solid #e9e5e5;
+    border-radius: 10px;
+    background-color: #f9f9f9;
+    color: #333;
+    width: 100%; /* Puedes ajustar el ancho si lo necesitas */
+    box-sizing: border-box;
+    font-weight: bold;
+    
+}
+
+input[type="date"]:focus {
+    outline: none;
+    border-color: #25c5b8; /* Color al hacer foco */
+    background-color: #ffffff;
+}
+
+select {
+    font-size: 19px;
+    border: none;
+    padding: 10px;
+}
+
+/* ----------------- HABITACION DOBLE SECTION ------------------ */
+.container-habitacion-doble {
+    background-color: #eee7e786;
+    margin: 20px 0px;
+    
+}
+
+.container-habitacion-info {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    max-width: 1300px;
+    margin: 0 auto;
+    background-color: #022024;
+
+}
+.container-habitacion-info > img {
+    width: 100%;
+}
+
+.info-habitacion-doble {
+    padding: 50px 40px;
+    position: relative;
+    color:white;
+
+
+}
+.info-habitacion-doble h3 {
+    margin: 15px 0px;
+    font-size: 3.3em;
+    text-shadow: 1px 1px 10px black;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container-beneficios {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px,1fr));
+    gap: 20px;
+    padding: 20px 0px;
+}
+
+.button-tarfias-habitacion-doble {
+    position: absolute;
+    right: 10px;
+    bottom: 5px;
+    padding: 15px 25px;
+    border: none;
+    background-color: #07e7c9;
+    color: var(--white-color);
+    font-size: 16px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    margin: 5px 0px;
+    transition:  background-color, color 0.2s ease-in-out;
+}
+
+.button-tarfias-habitacion-doble:hover {
+    background-color: white;
+    color: black;
+}
+
+.button-tarfias-habitacion-doble > i {
+    margin: 0px 5px;
+}
+
+/*------ TESTIMONIOS SECTION ------------------- */
+
+.container-testimonios {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.container-testimonios > h4 {
+    text-align: center;
+    font-size: 3em;
+    color: #0abea6;
+}
+
+.container-testimonios-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    grid-auto-flow: row dense;
+    width: 100%;
+    max-width: 1200px;
+
+}
+
+.info-testimonios {
+    padding: 20px;
+    text-align: center;
+    margin: 20px;
+    border-radius: 10px;
+    box-shadow: 1px 1px 10px #e2dfdf;
+}
+
+.info-testimonios:hover {
+    box-shadow: 1px 1px 10px #adadad;
+}
+
+
+.container-img-testimonios {
+    margin: 20px 0px;
+}
+
+.container-img-testimonios > img {
+    max-width: 200px;
+    border-radius: 50%;
+    box-shadow: 1px 1px 1px rgb(10, 10, 10);
+}
+
+.container-img-testimonios > h6 {
+    font-size: 2em;
+}
+
+/* ------------------- SECCION FOOTER ---------- */
+
+.container-footer {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-footer-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    max-width: 1500px;
+    width: 100%;
+}
+
+.info-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin: 15px 0px;
+}
+
+
+.info-sections > h1 {
+    margin: 10px 0px;
+}
+
+.info-sections > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 5px;
+}
+
+.info-sections > span > i {
+    margin: 0px 10px;
+}
+
+.info-sections > span > a {
+    text-decoration: none;
+    color: white;
+}
+
+.info-sections > img {
+    filter: brightness(0) invert(1);
+    text-align: center;
+    max-width: 150px;
+    
+}
+
+.info-sections:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.info-sections:nth-child(3) > * {
+    width: fit-content;
+}
+
+.info-sections:nth-child(3) > input[type="email"] {
+    padding: 10px;
+    margin: 20px;
+}
+.info-sections:nth-child(3) > button[type="submit"] {
+    padding: 5px 15px;
+    border: 3px solid #fff;
+    margin: 5px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+.info-sections:nth-child(3) > button[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* ------------------- SECCION FOOTER ---------- */
+
+.container-footer {
+    background-color: #222;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container-footer-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(300px,1fr));
+    max-width: 1500px;
+    width: 100%;
+}
+
+.info-sections {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    margin: 15px 0px;
+}
+
+
+.info-sections > h1 {
+    margin: 10px 0px;
+}
+
+.info-sections > span {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 3px 5px;
+}
+
+.info-sections > span > i {
+    margin: 0px 10px;
+}
+
+.info-sections > span > a {
+    text-decoration: none;
+    color: white;
+}
+
+.info-sections > img {
+    filter: brightness(0) invert(1);
+    text-align: center;
+    max-width: 150px;
+    
+}
+
+.info-sections:nth-child(3) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px 0px;
+    width: 100%;
+}
+
+.info-sections:nth-child(3) > * {
+    width: fit-content;
+}
+
+.info-sections:nth-child(3) > input[type="email"] {
+    padding: 10px;
+    margin: 20px;
+}
+.info-sections:nth-child(3) > button[type="submit"] {
+    padding: 5px 15px;
+    border: 3px solid #fff;
+    margin: 5px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+}
+.info-sections:nth-child(3) > button[type="submit"]:hover {
+    background-color: #333;
+}
+
+/* -------- MEDIA QUERIES SECTIONS */
+
+@media screen and (min-width:600px) {
+    .tarifa-item-button {
+        grid-column: span 2 ;
+    }
+    .container-habitacion-info > img {
+        width: 100%;
+    }
+    
+    .info-sections:nth-child(3) {
+        grid-column: span 2;
+    }
+
+} 
+
+/*QUERIES PARA EL HEADER */
+@container header (min-width:800px) {
+    /* Eliminamos el boton de movil */
+    .header_open-nav-button {
+        display: none;
+    }
+    
+    .container-name-hotel {
+        background-color: transparent;
+        padding: 0;
+        display: none;
+    }
+    
+    .container-name-hotel > img {
+        display: none;
+    
+    }
+
+    .nav {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        height: auto;
+        position: relative;
+        top: 0;
+        right: 0;
+    }
+
+
+    .header_nav_container {
+        display: flex;
+        flex-direction: row;
+        padding: 10px 0px;
+        justify-content: space-between;
+        align-items: center;
+        height: auto;
+        width: 100%;
+        font-size: clamp(1em,1.3em,1.5em);
+    }
+
+    .header_nav_img_item {
+        width: 100%;
+        max-width: 110px;
+        display: block;
+        filter: drop-shadow(1px 1px 3px #0000);
+        filter: brightness(0) invert(1);
+    }
+
+
+}
+
+@media screen and (min-width:800px) {
+    .tarifa-item-button {
+        grid-column: span 2 ;
+    }
+
+    .container-habitacion-info {
+        flex-direction: row;
+        gap: 30px;
+    
+    } 
+
+    .container-beneficios {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px,1fr));
+        gap: 20px;
+        padding: 20px 0px;
+    }
+
+    .info-habitacion-doble {
+        padding: 30px 5px;
+
+    
+    
+    }
+    .info-testimonios:nth-child(1) {
+        grid-column: span 2;
+    }
+    
+    .info-testimonios:nth-child(4) {
+        grid-column: span 2;
+    }
+    /*Modificando parte del footer*/
+
+    .container-footer-info {
+        grid-template-columns: repeat(auto-fill,minmax(400px,1fr));
+
+    }
+
+
+    .info-sections:nth-child(1) {
+        grid-column: span 2;
+        
+    }
+
+    .info-sections:nth-child(2) {
+        grid-column: span 2;
+    }
+} 
+
+@media screen and (min-width:1200px) {
+    /*Ajustando el ancho del header*/
+    .header_nav_list {
+        width: 90%;
+    }
+
+    .header_nav_img_item {
+        margin-left: 40px;
+    }
+
+    /*Tamaño del boton de tarfias*/
+    .tarifa-item-button {
+        grid-column: span 1 ;
+    }
+
+    .container-habitacion-info {
+        flex-direction: row;
+    
+    } 
+
+    .container-beneficios {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px,1fr));
+        gap: 20px;
+        padding: 20px 0px;
+    }
+    
+    .info-testimonios:nth-child(1) {
+        grid-column: span 1 ;
+    }
+    
+    .info-testimonios:nth-child(4) {
+        grid-column: span 1 ;
+    }
+
+    /*Modificando footer*/
+
+    .info-sections:nth-child(1) {
+        align-items: start;
+        justify-content: start;
+        padding-left: 20px;
+    }
+
+    .info-sections:nth-child(1) {
+        grid-column: span 1;
+    }
+
+    .info-sections:nth-child(2) {
+        grid-column: span 1;
+    }
+
+    .info-sections:nth-child(3) {
+        grid-column: span 1;
+    }
+    
+} 
